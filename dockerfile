@@ -1,3 +1,9 @@
 FROM python:3.13
 
-COPY main.py /app/main.py
+WORKDIR /app
+
+RUN pip install --no-cache-dir Faker
+
+COPY main.py .
+
+ENTRYPOINT [ "python", "main.py" ]

@@ -1,1 +1,3 @@
-print("ハロー from コンテナー")
+from faker import Faker
+
+print(Faker().name())
