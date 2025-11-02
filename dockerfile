@@ -1,9 +1,5 @@
-FROM python:3.13
+FROM docker/whalesay
 
-WORKDIR /app
+RUN apt-get -y update && apt-get install -y fortunes
 
-RUN pip install --no-cache-dir Faker
-
-COPY main.py .
-
-ENTRYPOINT [ "python", "main.py" ]
+CMD /usr/games/fortuen | cowsay
